@@ -1,0 +1,24 @@
+extends ../layouts/main.pug
+block content
+  .container
+    header
+      h1 New Blog Post
+
+    div
+      form(action="/movies", method="POST")
+        .form-group
+          label Title
+          input.form-control(name="movie[title]", required)
+
+        .form-group
+          label Content
+          textarea.form-control(name="movie[content]")
+
+        .form-group
+          label Status
+          select.form-control(name="movie[status]", required)
+            option(value="DRAFT") Draft
+            option(value="PUBLISHED") Publish
+        
+        .form-group
+          button.btn.btn-dark(type="submit") Submit
